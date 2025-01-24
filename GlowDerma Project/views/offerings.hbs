@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        h2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .offerings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .offering-card {
+            max-width: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .offering-card h3 {
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .offering-card p {
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .offering-card .available {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .offering-card .unavailable {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .offering-card.unavailable {
+            opacity: 0.6;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <div class="offerings">
+        {{#each offerings}}
+        <div class="offering-card {{#unless available}}unavailable{{/unless}}">
+            <h3>{{name}}</h3>
+            <p><strong>Price:</strong> ₹{{price}}</p>
+            <p><strong>Duration:</strong> {{duration}}</p>
+            <p>{{description}}</p>
+            {{#if available}}
+            <p class="available">Available</p>
+            {{else}}
+            <p class="unavailable">Unavailable</p>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</body>
+</html>

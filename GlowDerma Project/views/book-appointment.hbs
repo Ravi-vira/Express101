@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        h2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .appointment-card {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .appointment-card p {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .appointment-card p strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .appointment-card:hover {
+            background-color: #f0f8ff;
+            border-color: #007bff;
+            box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <div class="appointment-card">
+        <p><strong>Name:</strong> {{appointment.name}}</p>
+        <p><strong>Email:</strong> {{appointment.email}}</p>
+        <p><strong>Service:</strong> {{appointment.service}}</p>
+        <p><strong>Preferred Date:</strong> {{appointment.preferredDate}}</p>
+        <p><strong>Preferred Time:</strong> {{appointment.preferredTime}}</p>
+    </div>
+</body>
+</html>
